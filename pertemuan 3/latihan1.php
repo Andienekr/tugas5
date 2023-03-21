@@ -1,0 +1,16 @@
+<?php
+echo "Mulai <br>";
+$nilai1 = 10;
+While ($nilai1 >=1) {
+echo "Hello World $nilai1! <br>";
+$nilai1 -= 1;
+}
+echo "Selesai <br>";
+echo "<hr>";
+
+echo "Mulai <br>";
+for ($nilai_awal = 1; $nilai_awal <=10; $nilai_awal++) {
+echo "Hello World $nilai_awal kali.";
+}
+
+?>
