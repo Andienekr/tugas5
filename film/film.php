@@ -5,44 +5,42 @@ $film = [
         'Tahun' =>'2019',
         'Genre' =>'Romantis',
         'Pemeran Utama' => ['Mena Massoud','Naomi Scoutt'],
-        'Sutradara' => 'Guy Ritchie'
-        'gambar' => 'aladdin.png'
+        'Sutradara' => 'Guy Ritchie',
+        'poster' =>'aladdin.png'
     ],
     [
         'Judul' =>'Tangled',
         'Tahun' =>'2010',
         'Genre' =>'Advanture',
         'Pemeran Utama' => ['Zachary levi','Mandy Moore','Donna Murphy'],
-        'Sutradara' => 'Nathan Greno'
+        'Sutradara' => 'Nathan Greno',
+        'poster' =>'tangled.png'
     ],
     [
         'Judul' =>'Mars Need Mom',
         'Tahun' =>'2011',
         'Genre' =>'Animation',
         'Pemeran Utama' => ['Seth Green','Wendy Wells','Dan Fogler'],
-        'Sutradara' => 'Simon Wells'
+        'Sutradara' => 'Simon Wells',
+        'poster' =>'mars need mom.png'
     ],
     [
         'Judul' =>'The Heirs',
         'Tahun' =>'2013',
         'Genre' =>'Romantis',
         'Pemeran Utama' => ['Lee minho','Park shin hye'],
-        'Sutradara' => 'kim woo bin'
+        'Sutradara' => 'kim woo bin',
+        'poster' => 'the heirs.png'
     ],
     [
         'Judul' =>'Bussines Proposal',
         'Tahun' =>'2022',
         'Genre' =>'Romantis',
         'Pemeran Utama' => ['Ahn hyeo seop','Seojong kim'],
-        'Sutradara' => 'seol in ah'
-    ],
-    [
-        'Judul' =>'The lion king',
-        'Tahun' =>'2019',
-        'Genre' =>'Advanture',
-        'Pemeran Utama' => ['Beyonce','Jeff nathason'],
-        'Sutradara' => 'Jon favreau'
-    ],
+        'Sutradara' => 'seol in ah',
+        'poster' => 'bp.png'
+    ]
+    ];
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -50,24 +48,32 @@ $film = [
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Latihan 2</title>
+        <title>latihan film</title>
     </head>
     <body>
-        <h2> Daftar Mahasiswa</h2>
-        <?php foreach($mahasiswa as $mh) { ?>
+        <h2> Daftar Film</h2>
+        <ol>
+        <?php foreach($film as $f) { ?>
+        <li><strong><?= $f['Judul'];?></strong>
         <ul>
+            <br>
             <li>
-                <img src='img/<?= $mh['gambar']; ?>'>
+                <img src="poster/<?= $f['poster']; ?>"width =200px>
         </li>
-            <li>Nama:<?= $mh['nama']?></li>
-            <li>Makanan Favorit:
-                <?php foreach ($mh ['makanan'] as $m) {
-                    echo $m;
+            <li>Judul: <?= $f['Judul'];?></li>
+            <li>Tahun: <?= $f['Tahun'];?></li>
+            <li>Sutradara: <?= $f['Sutradara'];?></li>
+            <li>Genre: <?= $f['Genre'];?></li>
+             <li>Pemeran Utama:
+                <?php foreach ($f ['Pemeran Utama']as $f) {
+                    echo $f;
                 } ?>
             </li>
-            <li>Peliharaan:<?= $mh['hewan']; ?></li>
         </ul>
+        <br>
+            </li>
         <?php } ?>
+        </ol>
         
     </body>
     </html>
